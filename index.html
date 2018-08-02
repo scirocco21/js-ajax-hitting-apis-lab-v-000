@@ -26,6 +26,11 @@
     <div class="flexbox-container">
       <div>
         <h3>Repositories</h3>
+        <div class="search">
+          <form onsubmit="getRepositories()">
+            <input type="text" id="username" name="username" placeholder="Username">
+            <input type="submit" value="Get Repositories">          </form>
+        </div>
         <div id="repositories"></div>
       </div>
       <div>
