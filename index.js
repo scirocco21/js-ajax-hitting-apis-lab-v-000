@@ -50,7 +50,7 @@ function getCommits(el) {
   console.log(login)
   console.log(name)
   const req = new XMLHttpRequest()
-  const query =  'https://api.github.com/repos/' + login+'/' + name + '/commits'
+  const query =  'https://api.github.com/repos/' + login +'/' + name + '/commits'
   req.addEventListener("load", displayCommits)
   req.open("GET", query)
   req.send()
