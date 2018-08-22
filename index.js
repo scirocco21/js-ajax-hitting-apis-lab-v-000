@@ -26,7 +26,7 @@ function getBranches(el) {
   req.send()
 }
 
-function showBranches(event, data) {
+function displayBranches(event, data) {
   const branches = JSON.parse(this.responseText)
   const branchesList = `<ul>${branches.map(branch => '<li><strong>' + branch.name + '</strong></li>').join('')}</ul>`
   document.getElementById("details").innerHTML += branchesList
