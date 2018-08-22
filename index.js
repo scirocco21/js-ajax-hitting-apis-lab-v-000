@@ -12,7 +12,7 @@ function getRepositories() {
 
 function showRepositories(event, data) {
   var repos = JSON.parse(this.responseText)
-  const repoList = `<ul>${repos.map(r => '<li>' + '<a href="' + r.html_url + '">' + r.name + ' - <a href="#" data-repo="' + r.name + '" onclick="getCommits(this)">Get Commits</a>' + '<br>' + '<a href="#" data-repo="' + r.name + '" data-user="' + username.value + '" onclick="getBranches(this)">Get Branches</a>' +'</li>').join('')}</ul>`;
+  const repoList = `<ul>${repos.map(r => '<li>' + '<a href="' + r.html_url + '">' + r.name + ' - <a href="#" data-repo="' + r.name + '" onclick="getCommits(this)">Get Commits</a>' + '<br>' + '<a href="#" data-repo="' + r.name + '" data-user="' + r.owner.login + '" onclick="getBranches(this)">Get Branches</a>' +'</li>').join('')}</ul>`;
   document.getElementById("repositories").innerHTML = repoList
 }
 
@@ -20,7 +20,7 @@ function getBranches(el) {
   const name = el.dataset.repo
   const username = el.dataset.user
   const req = new XMLHttpRequest()
-  const query =  'https://api.github.com/repos/' + username.value + '/'+ name + '/branches'
+  const query =  'https://api.github.com/repos/' + username + '/'+ name + '/branches'
   req.addEventListener("load", showBranches)
   req.open("GET", query)
   req.send()
