@@ -15,9 +15,10 @@ function displayRepositories(event, data) {
   const repoList =
   `<ul>${repos.map(r =>
     '<li>' +
-        r.name +
+      r.name +
       '<a href="' + r.html_url + '">' +
-      '<br>'
+      r.html_url +
+      '<br>' + 
       ' - <a href="#" data-repo="' + r.name + '" data-user="' + r.owner.login + '" onclick="getCommits(this)">Get Commits</a>' + '<br>' +
       '<a href="#" data-repo="' + r.name + '" data-user="' + r.owner.login + '" onclick="getBranches(this)">Get Branches</a>' +
     '</li>').join('')}
