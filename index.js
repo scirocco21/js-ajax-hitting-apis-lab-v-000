@@ -22,7 +22,7 @@ function getBranches(el) {
   const username = el.dataset.user
   const req = new XMLHttpRequest()
   const query =  'https://api.github.com/repos/' + username.value + '/'+ name + '/branches'
-  req.addEventListener("load", showCommits)
+  req.addEventListener("load", showBranches)
   req.open("GET", query)
   req.send()
 }
