@@ -17,6 +17,16 @@ function showRepositories(event, data) {
   document.getElementById("repositories").innerHTML = repoList
 }
 
+function getBranches(el) {
+  const name = el.dataset.repo
+  const username = el.dataset.user
+  const req = new XMLHttpRequest()
+  const query =  'https://api.github.com/repos/' + username.value + '/'+ name + '/commits'
+  req.addEventListener("load", showCommits)
+  req.open("GET", query)
+  req.send()
+}
+
 function getCommits(el) {
   const name = el.dataset.repo
   const req = new XMLHttpRequest()
