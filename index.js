@@ -20,6 +20,7 @@ function showRepositories(event, data) {
 function getCommits(el) {
   const name = el.dataset.repo
   console.log(el)
+  console.log(el.dataset)
   const req = new XMLHttpRequest()
   const query =  'https://api.github.com/users/' + el.owner.login + '/' + name + '/commits'
   req.addEventListener("load", showCommits)
