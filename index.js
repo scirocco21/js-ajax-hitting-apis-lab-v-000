@@ -18,7 +18,7 @@ function displayRepositories(event, data) {
       r.name +
       '<a href="' + r.html_url + '">' +
       r.html_url +
-      '<a/>'
+      '<a/>' +
       '<br>' +
       ' - <a href="#" data-repo="' + r.name + '" data-user="' + r.owner.login + '" onclick="getCommits(this)">Get Commits</a>' + '<br>' +
       '<a href="#" data-repo="' + r.name + '" data-user="' + r.owner.login + '" onclick="getBranches(this)">Get Branches</a>' +
