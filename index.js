@@ -28,7 +28,9 @@ function getBranches(el) {
 }
 
 function showBranches(event, data) {
-  
+  const branches = JSON.parse(this.responseText)
+  const branchesList = `<ul>${branches.map(branch => '<li><strong>' + branch.name + '</strong></li>').join('')}</ul>`
+  document.getElementById("details").innerHTML += branchesList
 }
 
 function getCommits(el) {
