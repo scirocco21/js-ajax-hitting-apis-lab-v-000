@@ -45,7 +45,6 @@ function displayBranches(event, data) {
 
 function getCommits(el) {
   const name = el.dataset.repo
-  const login = el.dataset.user
   console.log(login)
   console.log(name)
   const req = new XMLHttpRequest()
