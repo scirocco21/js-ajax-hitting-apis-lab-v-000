@@ -20,8 +20,8 @@ function displayRepositories(event, data) {
       r.html_url +
       '<a/>' +
       '<br>' +
-      '<a href="#" data-repo="' + r.name + '" data-username="' + r.owner.login + '" onclick="getCommits(this)">Get Commits</a>' + '<br>' +
-      '<a href="#" data-repo="' + r.name + '" data-username="' + r.owner.login + '" onclick="getBranches(this)">Get Branches</a>' +
+      '<a href="#" data-repository="' + r.name + '" data-username="' + r.owner.login + '" onclick="getCommits(this)">Get Commits</a>' + '<br>' +
+      '<a href="#" data-repository="' + r.name + '" data-username="' + r.owner.login + '" onclick="getBranches(this)">Get Branches</a>' +
     '</li>').join('')}
     </ul>`;
   document.getElementById("repositories").innerHTML = repoList
