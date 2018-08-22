@@ -27,6 +27,10 @@ function getBranches(el) {
   req.send()
 }
 
+function showBranches(event, data) {
+  
+}
+
 function getCommits(el) {
   const name = el.dataset.repo
   const req = new XMLHttpRequest()
