@@ -12,7 +12,12 @@ function getRepositories() {
 
 function displayRepositories(event, data) {
   var repos = JSON.parse(this.responseText)
-  const repoList = `<ul>${repos.map(r => '<li>' + '<a href="' + r.html_url + '">' + '<br>' + r.name + ' - <a href="#" data-repo="' + r.name + '" onclick="getCommits(this)">Get Commits</a>' + '<br>' + '<a href="#" data-repo="' + r.name + '" data-user="' + r.owner.login + '" onclick="getBranches(this)">Get Branches</a>' +'</li>').join('')}</ul>`;
+  const repoList = 
+  `<ul>${repos.map(r => 
+    '<li>' + 
+      '<a href="' + r.html_url + '">' + r.name + ' - <a href="#" data-repo="' + r.name + '" onclick="getCommits(this)">Get Commits</a>' + '<br>' + '<a href="#" data-repo="' + r.name + '" data-user="' + r.owner.login + '" onclick="getBranches(this)">Get Branches</a>' +
+    '</li>').join('')}
+    </ul>`;
   document.getElementById("repositories").innerHTML = repoList
 }
 
@@ -35,7 +40,6 @@ function displayBranches(event, data) {
 function getCommits(el) {
   const name = el.dataset.repo
   const login = el.dataset.user
-  console.log(username)
   const req = new XMLHttpRequest()
   const query =  'https://api.github.com/repos/' + login + '/' + name + '/commits'
   req.addEventListener("load", displayCommits)
