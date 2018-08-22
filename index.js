@@ -24,7 +24,7 @@ function getCommits(el) {
   console.log(el.dataset.repo.owner)
   console.log(username.value)
   const req = new XMLHttpRequest()
-  const query =  'https://api.github.com/users/' + el.owner.login + '/' + name + '/commits'
+  const query =  'https://api.github.com/users/' + username.value + '/' + name + '/commits'
   req.addEventListener("load", showCommits)
   req.open("GET", query)
   req.send()
