@@ -22,7 +22,7 @@ function getCommits(el) {
   const req = new XMLHttpRequest()
   const query =  'https://api.github.com/users/' + el.owner.login + '/' + name + '/commits'
   req.addEventListener("load", showCommits)
-  req.open("GET", 'https://api.github.com/repos/octocat/' + name + '/commits')
+  req.open("GET", query)
   req.send()
 }
 
