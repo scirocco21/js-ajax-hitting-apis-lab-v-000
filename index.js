@@ -17,6 +17,7 @@ function displayRepositories(event, data) {
     '<li>' +
       r.name +
       '<a href="' + r.html_url + '">' +
+      '<br>' + 
       r.html_url +
       '<a/>' +
       '<br>' +
