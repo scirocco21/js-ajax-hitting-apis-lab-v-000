@@ -17,7 +17,7 @@ function displayRepositories(event, data) {
     '<li>' +
       '<a href="' + r.html_url + '">' +
       r.name +
-      ' - <a href="#" data-repo="' + r.name + '" data-user="' + r.owner.login + '" onclick="getCommits(this)">Get Commits</a>' + '<br>' + 
+      ' - <a href="#" data-repo="' + r.name + '" data-user="' + r.owner.login + '" onclick="getCommits(this)">Get Commits</a>' + '<br>' +
       '<a href="#" data-repo="' + r.name + '" data-user="' + r.owner.login + '" onclick="getBranches(this)">Get Branches</a>' +
     '</li>').join('')}
     </ul>`;
@@ -51,7 +51,7 @@ function getCommits(el) {
 }
 
 
-function displayCommits() {
+function displayCommits(event, data) {
   const commits = JSON.parse(this.responseText)
   const commitsList = `<ul>${commits.map(commit => '<li><h2>' + commit.author.login + '</h2><h2>' + commit.commit.author.name + ' - ' + commit.commit.message + '</li>').join('')}</ul>`
   document.getElementById("details").innerHTML = commitsList
